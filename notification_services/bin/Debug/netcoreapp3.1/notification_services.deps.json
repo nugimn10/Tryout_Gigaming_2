@@ -25,6 +25,7 @@
       "notification_services/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "8.6.2",
+          "Hangfire": "1.7.9",
           "Hangfire.AspNetCore": "1.7.9",
           "Hangfire.Core": "1.7.9",
           "Hangfire.PostgreSql": "1.6.4.1",
@@ -365,6 +366,13 @@
           "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
+      "Hangfire/1.7.9": {
+        "dependencies": {
+          "Hangfire.AspNetCore": "1.7.9",
+          "Hangfire.Core": "1.7.9",
+          "Hangfire.SqlServer": "1.7.9"
+        }
+      },
       "Hangfire.AspNetCore/1.7.9": {
         "dependencies": {
           "Hangfire.Core": "1.7.9"
@@ -426,6 +434,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Hangfire.PostgreSql.dll": {}
+        }
+      },
+      "Hangfire.SqlServer/1.7.9": {
+        "dependencies": {
+          "Hangfire.Core": "1.7.9",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "assemblyVersion": "1.7.9.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {}
         }
       },
       "MailKit/2.5.2": {
@@ -2978,6 +3001,13 @@
       "path": "fluentvalidation.dependencyinjectionextensions/8.6.2",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512"
     },
+    "Hangfire/1.7.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tkYsIxyLyihrelb+62C6ubz8yCTIUlpTiCtq0MH8ItyMCUgFYYAT/ASXtfMYnNU4xr/egQqRcH5exFSaYJxLbA==",
+      "path": "hangfire/1.7.9",
+      "hashPath": "hangfire.1.7.9.nupkg.sha512"
+    },
     "Hangfire.AspNetCore/1.7.9": {
       "type": "package",
       "serviceable": true,
@@ -2998,6 +3028,13 @@
       "sha512": "sha512-SbArRqD9u/UQm86ctLfSOd5gQf24oVC/zR+QFeZRuZbQSs1iuFJcTLwcTYrt4FHoKLAZM1n5LJAAfklcUSsK9Q==",
       "path": "hangfire.postgresql/1.6.4.1",
       "hashPath": "hangfire.postgresql.1.6.4.1.nupkg.sha512"
+    },
+    "Hangfire.SqlServer/1.7.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wqpAe5WhzDjXGM4cOUbENazkiBogn8mc5Dpk9Qp1tnngqW5XW2iETP1tE5pUpa2Q870TxOCrnurvQNRCAvMuvA==",
+      "path": "hangfire.sqlserver/1.7.9",
+      "hashPath": "hangfire.sqlserver.1.7.9.nupkg.sha512"
     },
     "MailKit/2.5.2": {
       "type": "package",

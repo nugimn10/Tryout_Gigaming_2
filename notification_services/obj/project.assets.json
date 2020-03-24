@@ -57,6 +57,14 @@
           "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
+      "Hangfire/1.7.9": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.AspNetCore": "[1.7.9]",
+          "Hangfire.Core": "[1.7.9]",
+          "Hangfire.SqlServer": "[1.7.9]"
+        }
+      },
       "Hangfire.AspNetCore/1.7.9": {
         "type": "package",
         "dependencies": {
@@ -115,6 +123,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Hangfire.PostgreSql.dll": {}
+        }
+      },
+      "Hangfire.SqlServer/1.7.9": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.Core": "[1.7.9]",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {}
         }
       },
       "MailKit/2.5.2": {
@@ -1623,6 +1644,18 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
+    "Hangfire/1.7.9": {
+      "sha512": "tkYsIxyLyihrelb+62C6ubz8yCTIUlpTiCtq0MH8ItyMCUgFYYAT/ASXtfMYnNU4xr/egQqRcH5exFSaYJxLbA==",
+      "type": "package",
+      "path": "hangfire/1.7.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "hangfire.1.7.9.nupkg.sha512",
+        "hangfire.nuspec",
+        "readme.txt"
+      ]
+    },
     "Hangfire.AspNetCore/1.7.9": {
       "sha512": "KY2JlteawK3oozv59WKzuBRy90lcRailvVSeYK8yJzYoae7YrluyP8LPUzGefajWDQSfFqskG3vyKJTOJINnjg==",
       "type": "package",
@@ -1707,6 +1740,31 @@
         "hangfire.postgresql.nuspec",
         "lib/net451/Hangfire.PostgreSql.dll",
         "lib/netstandard2.0/Hangfire.PostgreSql.dll"
+      ]
+    },
+    "Hangfire.SqlServer/1.7.9": {
+      "sha512": "wqpAe5WhzDjXGM4cOUbENazkiBogn8mc5Dpk9Qp1tnngqW5XW2iETP1tE5pUpa2Q870TxOCrnurvQNRCAvMuvA==",
+      "type": "package",
+      "path": "hangfire.sqlserver/1.7.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "hangfire.sqlserver.1.7.9.nupkg.sha512",
+        "hangfire.sqlserver.nuspec",
+        "lib/net45/Hangfire.SqlServer.dll",
+        "lib/net45/Hangfire.SqlServer.xml",
+        "lib/netstandard1.3/Hangfire.SqlServer.dll",
+        "lib/netstandard1.3/Hangfire.SqlServer.xml",
+        "lib/netstandard2.0/Hangfire.SqlServer.dll",
+        "lib/netstandard2.0/Hangfire.SqlServer.xml",
+        "tools/install.sql"
       ]
     },
     "MailKit/2.5.2": {
@@ -5359,6 +5417,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "FluentValidation.AspNetCore >= 8.6.2",
+      "HangFire >= 1.7.9",
       "Hangfire.AspNetCore >= 1.7.9",
       "Hangfire.Core >= 1.7.9",
       "Hangfire.PostgreSql >= 1.6.4.1",
@@ -5409,6 +5468,10 @@
           "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[8.6.2, )"
+          },
+          "HangFire": {
+            "target": "Package",
+            "version": "[1.7.9, )"
           },
           "Hangfire.AspNetCore": {
             "target": "Package",

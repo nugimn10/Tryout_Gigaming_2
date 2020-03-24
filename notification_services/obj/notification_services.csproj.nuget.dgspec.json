@@ -40,6 +40,10 @@
               "target": "Package",
               "version": "[8.6.2, )"
             },
+            "HangFire": {
+              "target": "Package",
+              "version": "[1.7.9, )"
+            },
             "Hangfire.AspNetCore": {
               "target": "Package",
               "version": "[1.7.9, )"

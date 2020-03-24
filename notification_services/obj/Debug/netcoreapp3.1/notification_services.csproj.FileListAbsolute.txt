@@ -61,3 +61,4 @@
 /Users/user/tryout_2_gigaming_nugi/notification_services/obj/Debug/netcoreapp3.1/staticwebassets/notification_services.StaticWebAssets.xml
 /Users/user/tryout_2_gigaming_nugi/notification_services/obj/Debug/netcoreapp3.1/notification_services.dll
 /Users/user/tryout_2_gigaming_nugi/notification_services/obj/Debug/netcoreapp3.1/notification_services.pdb
+/Users/user/tryout_2_gigaming_nugi/notification_services/bin/Debug/netcoreapp3.1/Hangfire.SqlServer.dll

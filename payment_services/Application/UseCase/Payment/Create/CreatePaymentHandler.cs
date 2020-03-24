@@ -29,7 +29,6 @@ namespace payment_services.Application.UseCase.payment.Create
         public async Task<CreatePaymentDto> Handle(CreatePayment request, CancellationToken cancellationToken)
         {
             var notificationList = _context.payments.ToList();
-
             var paydata = new PaymentTb()
             {
                 Payment_type = request.Data.Attributes.Payment_type,
@@ -39,6 +38,47 @@ namespace payment_services.Application.UseCase.payment.Create
             };
   
             await _context.SaveChangesAsync();
+
+            var target = new TargetCommand() { Id = 3123, Email_destination = "nugi@gmail.com"};
+
+            PostCommand command = new PostCommand()
+            {
+                Title = "this is simple",
+                Message = "dont judge me",
+                Type = "email",
+                From = 1,
+                Targets = new List<TargetCommand>() { target }
+            };
+
+            var attributes = new Data<PostCommand>()
+            { Attributes = command };
+
+            var httpContent = new RequestData<PostCommand>()
+            { Data = attributes };
+
+            var jsonObj = JsonConvert.SerializeObject(httpContent);
+
+            var factory = new ConnectionFactory() {HostName = "localhost"};
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.ExchangeDeclare("userDataExchange", "fanout");
+                channel.QueueDeclare("notification", true, false, false, null);
+
+                channel.QueueBind("notification", "userDataExchange", string.Empty);
+
+                var body = Encoding.UTF8.GetBytes(jsonObj);
+
+                channel.BasicPublish(
+                    exchange: "userDataExchange",
+                    routingKey: "",
+                    basicProperties: null,
+                    body: body
+                    );
+                Console.WriteLine("User data has been forwarded");
+                
+            }
+            
 
             return new CreatePaymentDto
             {
